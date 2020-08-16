@@ -106,12 +106,12 @@ function! s:ActiveStatusLine()
   let s:statusline.="%#LineInfoLeft#"
   let s:statusline.=g:sep.lineinfoleft
 
-  if squeeze_width > 40
-    let s:statusline.="%#StatusEncod#"
-    let s:statusline.="%{spaceline#file#file_encode()}"
-    let s:statusline.="\ "
-    let s:statusline.="%#StatusFileFormat#%{spaceline#file#file_format()}"
-  endif
+  " if squeeze_width > 40
+  "   let s:statusline.="%#StatusEncod#"
+  "   let s:statusline.="%{spaceline#file#file_encode()}"
+  "   let s:statusline.="\ "
+  "   let s:statusline.="%#StatusFileFormat#%{spaceline#file#file_format()}"
+  " endif
 
   let s:statusline.="%#LineFormatRight#"
   
