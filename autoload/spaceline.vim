@@ -47,9 +47,12 @@ function! s:ActiveStatusLine()
     let s:statusline.="%{spaceline#diagnostic#diagnostic_warn()}"
     let s:statusline.="\ "
   elseif !empty(spaceline#file#file_size()) && squeeze_width > 40
-    let s:statusline.="%#Filesize#"
-    let s:statusline.="%{spaceline#file#file_size()}"
     let s:statusline.="\ "
+    let s:statusline.="%#DiagnosticAccent#"
+    let s:statusline.="%{spaceline#diagnostic#diagnostic_ok()}"
+    let s:statusline.="\ "
+    " let s:statusline.="%#Filesize#"
+    let s:statusline.="%{spaceline#file#file_size()}"
     let s:statusline.="%#FilesizeRight#"
     let s:statusline.=g:sep.homemoderight
   endif
@@ -62,7 +65,6 @@ function! s:ActiveStatusLine()
     let s:statusline.="%{spaceline#vcs#git_branch_icon()}"
     let s:statusline.="%#GitInfo#"
     let s:statusline.="%{spaceline#vcs#git_branch()}"
-    let s:statusline.="\ "
 
     if !empty(spaceline#vcs#diff_add())
       let s:statusline.="%#GitAdd#"

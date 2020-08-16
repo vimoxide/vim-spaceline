@@ -37,8 +37,7 @@ function! spaceline#file#file_size()abort
   if empty(expand('%:t'))
     return ''
   endif
-  let l:oksign = spaceline#diagnostic#diagnostic_ok()
-  return ' '.l:oksign.' '.s:size(@%)
+  return s:size(@%)
 endfunction
 
 function! spaceline#file#file_name() abort
